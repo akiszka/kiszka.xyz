@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 
 const REF_W = 1100;
 const REF_H = 980;
@@ -425,7 +426,7 @@ export default function Desk() {
               transform: "rotate(4deg)",
             }}
             ref={photoRef as React.RefObject<HTMLElement>}
-            aria-label="polaroid, warsaw balcony"
+            aria-label="picture"
           >
             <span
               className={`tape${tapeState === "flung" ? " flung" : ""}`}
@@ -442,9 +443,14 @@ export default function Desk() {
               style={tapeState === "gone" ? { display: "none" } : undefined}
             />
             <div className="photo-inner">
-              [ photo {"\u00b7"} warsaw balcony ]
+              <Image
+                src="/oslo.jpg"
+                alt="oslo"
+                fill
+                className="object-cover select-auto pointer-events-none"
+              />
             </div>
-            <div className="photo-cap">hello from warsaw</div>
+            <div className="photo-cap">hello from oslo</div>
           </article>
 
           <article
