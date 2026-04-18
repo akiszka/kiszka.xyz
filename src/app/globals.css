@@ -182,12 +182,12 @@ a {
 
 /* cards */
 .card {
-  padding: 16px 18px;
+  padding: 20px 18px;
   width: 260px;
 }
 
 .card h4 {
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   font-family: var(--font-jetbrains-mono), monospace;
   font-size: 10.5px;
   letter-spacing: 0.2em;
@@ -387,8 +387,8 @@ a {
   .mobile-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 44px;
+    gap: 28px;
+    margin-top: clamp(36px, 6vw, 52px);
     justify-content: flex-start;
     align-items: flex-start;
   }
@@ -449,7 +449,7 @@ a {
   .mobile-stack {
     flex-direction: column;
     align-items: stretch;
-    gap: 18px;
+    gap: 22px;
   }
 
   .obj {
