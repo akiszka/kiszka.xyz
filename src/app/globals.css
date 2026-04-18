@@ -4,7 +4,7 @@
   --paper: #c0c8d4; --card: #d8dee8;
   --ink: #111;
   --ink-soft: #333;
-  --muted: #555;
+  --muted: #4a4a4a;
   --tape: rgba(255, 220, 120, 0.75);
   --photo-a: #d0c8b4; --photo-b: #dfd8c6;
 }
@@ -186,7 +186,7 @@ a {
   width: 260px;
 }
 
-.card h4 {
+.card h2 {
   margin: 0 0 10px;
   font-family: var(--font-jetbrains-mono), monospace;
   font-size: 10.5px;
@@ -207,7 +207,7 @@ a {
   color: var(--paper);
 }
 
-.card.dark h4 {
+.card.dark h2 {
   color: #888;
 }
 
@@ -429,6 +429,22 @@ a {
   .obj:nth-child(6) {
     transform: rotate(1.2deg) !important;
   }
+
+  .sub {
+    font-size: 15px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+
+  .card h2 {
+    font-size: 12px;
+  }
+
+  .card a {
+    padding: 4px 0;
+  }
 }
 
 @media (max-width: 560px) {
@@ -441,8 +457,8 @@ a {
   }
 
   .links a {
-    padding: 9px 12px;
-    font-size: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
     box-shadow: 2px 2px 0 var(--ink);
   }
 
@@ -461,6 +477,32 @@ a {
   .obj.photo {
     width: min(75vw, 300px);
     align-self: center;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  .sub {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .card p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .card h2 {
+    font-size: 12px;
+  }
+
+  .card a {
+    padding: 5px 0;
+  }
+
+  .foot .reset {
+    padding: 10px 18px;
   }
 }
 

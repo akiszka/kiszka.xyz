@@ -19,7 +19,7 @@ function cssTop(py: number): string {
 }
 
 export default function Desk() {
-  const stageRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLElement>(null);
   const photoRef = useRef<HTMLElement>(null);
   const resetRef = useRef<() => void>(null);
   const [clockText, setClockText] = useState("");
@@ -31,7 +31,7 @@ export default function Desk() {
   useEffect(() => {
     const stageEl = stageRef.current;
     if (!stageEl) return;
-    const stage: HTMLDivElement = stageEl;
+    const stage = stageEl;
 
     const objs = Array.from(stage.querySelectorAll<HTMLElement>(".obj"));
     let isFlow = false;
@@ -376,7 +376,7 @@ export default function Desk() {
 
   return (
     <>
-      <div className="stage" ref={stageRef}>
+      <main className="stage" ref={stageRef}>
         <div className="hint">
           kiszka.xyz
           <br />
@@ -386,7 +386,7 @@ export default function Desk() {
 
         <section className="hero">
           <p className="eyebrow">
-            <span className="live" />
+            <span className="live" aria-hidden="true" />
             building things that should exist
           </p>
           <h1 className="name">
@@ -470,7 +470,7 @@ export default function Desk() {
               transform: "rotate(-2deg)",
             }}
           >
-            <h4>currently</h4>
+            <h2>currently</h2>
             <p>
               <a href="https://www.derpetual.com/" target="_blank" rel="noreferrer noopener">
                 <b>Derpetual</b>{" "}&mdash; making every financial asset tradable.&nbsp;&#x2197;
@@ -490,7 +490,7 @@ export default function Desk() {
               transform: "rotate(2deg)",
             }}
           >
-            <h4>shipped</h4>
+            <h2>shipped</h2>
             <p>
               <a href="https://parlour.dev" target="_blank" rel="noreferrer noopener">blockchain apps&nbsp;&#x2197;</a>
               <br />
@@ -518,7 +518,7 @@ export default function Desk() {
               transform: "rotate(-3deg)",
             }}
           >
-            <h4>interested in</h4>
+            <h2>interested in</h2>
             <p>
               useful defi {"\u00b7"} neuroscience {"\u00b7"} linguistics{" "}
               {"\u00b7"} privacy
@@ -537,7 +537,7 @@ export default function Desk() {
               transform: "rotate(3deg)",
             }}
           >
-            <h4>belief</h4>
+            <h2>belief</h2>
             <p
               style={{
                 fontFamily: "var(--font-instrument-serif), serif",
@@ -562,7 +562,7 @@ export default function Desk() {
               transform: "rotate(-1deg)",
             }}
           >
-            <h4>now reading</h4>
+            <h2>now reading</h2>
             <p>
               <em>Elon Musk</em> {"\u2014"} Isaacson
               <br />
@@ -572,7 +572,7 @@ export default function Desk() {
             </p>
           </article>
         </div>
-      </div>
+      </main>
 
       <div className="foot">
         <span>{clockText}</span>
