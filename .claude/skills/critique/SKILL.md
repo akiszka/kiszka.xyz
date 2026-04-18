@@ -1,6 +1,7 @@
 ---
 name: critique
 description: Evaluate design from a UX perspective, assessing visual hierarchy, information architecture, emotional resonance, cognitive load, and overall quality with quantitative scoring, persona-based testing, automated anti-pattern detection, and actionable feedback. Use when the user asks to review, critique, evaluate, or give feedback on a design or component.
+version: 2.1.1
 user-invocable: true
 argument-hint: "[area (feature, page, component...)]"
 allowed-tools:
@@ -145,7 +146,7 @@ For each issue, tag with **P0-P3 severity** (consult [heuristics-scoring](refere
 - **[P?] What**: Name the problem clearly
 - **Why it matters**: How this hurts users or undermines goals
 - **Fix**: What to do about it (be concrete)
-- **Suggested command**: Which command could address this (from: /overdrive, /arrange, /animate, /polish, /normalize, /clarify, /critique, /colorize, /audit, /optimize, /typeset, /onboard, /bolder, /delight, /adapt, /shape, /distill, /extract, /harden, /quieter)
+- **Suggested command**: Which command could address this (from: /polish, /typeset, /colorize, /quieter, /critique, /overdrive, /clarify, /bolder, /audit, /distill, /harden, /layout, /shape, /animate, /optimize, /adapt, /delight)
 
 #### Persona Red Flags
 > *Consult [personas](reference/personas.md)*
@@ -210,7 +211,7 @@ List recommended commands in priority order, based on the user's answers:
 ...
 
 **Rules for recommendations**:
-- Only recommend commands from: /overdrive, /arrange, /animate, /polish, /normalize, /clarify, /critique, /colorize, /audit, /optimize, /typeset, /onboard, /bolder, /delight, /adapt, /shape, /distill, /extract, /harden, /quieter
+- Only recommend commands from: /polish, /typeset, /colorize, /quieter, /critique, /overdrive, /clarify, /bolder, /audit, /distill, /harden, /layout, /shape, /animate, /optimize, /adapt, /delight
 - Order by the user's stated priorities first, then by impact
 - Each item's description should carry enough context that the command knows what to focus on
 - Map each Priority Issue to the appropriate command

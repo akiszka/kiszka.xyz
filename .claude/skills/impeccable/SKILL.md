@@ -1,10 +1,27 @@
 ---
 name: impeccable
-description: Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics. Use when the user asks to build web components, pages, artifacts, posters, or applications, or when any design skill requires project context. Call with 'craft' to run the full shape-then-build flow, or 'teach' for design context setup.
+description: Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics. Use when the user asks to build web components, pages, artifacts, posters, or applications, or when any design skill requires project context. Call with 'craft' for shape-then-build, 'teach' for design context setup, or 'extract' to pull reusable components and tokens into the design system.
+version: 2.1.1
 user-invocable: true
-argument-hint: "[craft|teach]"
+argument-hint: "[craft|teach|extract]"
 license: Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for attribution.
 ---
+
+<post-update-cleanup>
+BEFORE doing any design work, run this one-time maintenance step. Tell the user:
+
+> **Impeccable was updated.** A few skills were renamed or merged in this version (e.g. `/arrange` is now `/layout`, `/normalize` was folded into `/polish`). I'll clean up the old skill files so they don't clutter your project. This only runs once after an update.
+
+Then run:
+
+```bash
+node .claude/skills/impeccable/scripts/cleanup-deprecated.mjs
+```
+
+If the script removed files, briefly confirm what was cleaned up. If it found nothing, skip any output and move on.
+
+After running the script, delete this entire section (from `<post-update-cleanup>` through `</post-update-cleanup>` inclusive) from THIS file so it does not run again until the next update. Save the file.
+</post-update-cleanup>
 
 This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
 
@@ -95,7 +112,7 @@ Instrument Sans
 Instrument Serif
 </reflex_fonts_to_reject>
 
-Reject every font that appears in the reflex_fonts_to_reject list. They are your training-data defaults and they create monoculture across projects. **Syne in particular is the most overused "distinctive" display font and is an instant AI design tell. Never use it.**
+Reject every font that appears in the reflex_fonts_to_reject list. They are your training-data defaults and they create monoculture across projects.
 
 Step 3. Browse a font catalog with the 3 brand words in mind. Sources: Google Fonts, Pangram Pangram, Future Fonts, Adobe Fonts, ABC Dinamo, Klim Type Foundry, Velvetyne. Look for something that fits the brand as a *physical object* — a museum exhibit caption, a hand-painted shop sign, a 1970s mainframe terminal manual, a fabric label on the inside of a coat, a children's book printed on cheap newsprint. Reject the first thing that "looks designy" — that's the trained reflex too. Keep looking.
 
@@ -108,7 +125,6 @@ DO vary font weights and sizes to create clear visual hierarchy.
 DO vary your font choices across projects. If you used a serif display font on the last project, look for a sans, monospace, or display face on this one.
 
 DO NOT use overused fonts like Inter, Roboto, Arial, Open Sans, or system defaults — but also do not simply switch to your second-favorite. Every font in the reflex_fonts_to_reject list above is banned. Look further.
-DO NOT use Syne. Ever. It is an instant AI design tell.
 DO NOT use monospace typography as lazy shorthand for "technical/developer" vibes.
 DO NOT put large icons with rounded corners above every heading. They rarely add value and make sites look templated.
 DO NOT use only one font family for the entire page. Pair a distinctive display font with a refined body font.
@@ -341,3 +357,9 @@ Write this section to `.impeccable.md` in the project root. If the file already 
 Then STOP and call the AskUserQuestion tool to clarify. whether they'd also like the Design Context appended to CLAUDE.md. If yes, append or update the section there as well.
 
 Confirm completion and summarize the key design principles that will now guide all future work.
+
+---
+
+## Extract Mode
+
+If this skill is invoked with the argument "extract" (e.g., `/impeccable extract [target]`), follow the [extract flow](reference/extract.md). Pass any additional arguments as the extraction target.
