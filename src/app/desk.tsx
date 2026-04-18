@@ -543,23 +543,24 @@ export default function Desk() {
           </article>
 
           <article
-            className="obj card chip"
+            className="obj card"
             data-px="860"
             data-py="600"
             data-rot="-1"
             style={{
               left: 860,
               top: cssTop(600),
+              width: 320,
               transform: "rotate(-1deg)",
             }}
           >
-            <h4>since</h4>
+            <h4>now reading</h4>
             <p>
-              <span className="big">2005</span>
+              <em>Elon Musk</em> {"\u2014"} Isaacson
               <br />
-              <span className="chip-detail">
-                coding {"\u00b7"} shipping since &apos;17
-              </span>
+              <em>The Brothers Karamazov</em> {"\u2014"} Dostoyevski
+              <br />
+              <em>The Family</em> {"\u2014"} Puzo
             </p>
           </article>
         </div>
