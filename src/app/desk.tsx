@@ -310,16 +310,20 @@ export default function Desk() {
   // Warsaw clock
   useEffect(() => {
     const tick = () => {
-      const d = new Date();
-      const time = new Intl.DateTimeFormat("en-GB", {
+      const parts = new Intl.DateTimeFormat("en-GB", {
         timeZone: "Europe/Warsaw",
         hour: "2-digit",
         minute: "2-digit",
+        day: "2-digit",
+        month: "2-digit",
+        year: "2-digit",
         hour12: false,
-      }).format(d);
-      const pad = (n: number) => String(n).padStart(2, "0");
-      const date = `${pad(d.getUTCDate())}.${pad(d.getUTCMonth() + 1)}.${String(d.getUTCFullYear()).slice(2)}`;
-      setClockText(`warsaw \u00b7 ${time} \u00b7 ${date}`);
+      }).formatToParts(new Date());
+      const get = (t: Intl.DateTimeFormatPartTypes) =>
+        parts.find((p) => p.type === t)!.value;
+      setClockText(
+        `warsaw \u00b7 ${get("hour")}:${get("minute")} \u00b7 ${get("day")}.${get("month")}.${get("year")}`
+      );
     };
     tick();
     const interval = setInterval(tick, 30000);
@@ -426,7 +430,7 @@ export default function Desk() {
               transform: "rotate(4deg)",
             }}
             ref={photoRef as React.RefObject<HTMLElement>}
-            aria-label="picture"
+            aria-label="Polaroid photo from Oslo"
           >
             <span
               className={`tape${tapeState === "flung" ? " flung" : ""}`}
