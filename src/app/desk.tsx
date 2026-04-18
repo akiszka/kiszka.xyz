@@ -387,8 +387,7 @@ export default function Desk() {
         <section className="hero">
           <p className="eyebrow">
             <span className="live" />
-            founder {"\u00b7"} programmer {"\u00b7"} thiel fellow {"\u00b7"}{" "}
-            warsaw
+            building things that should exist
           </p>
           <h1 className="name">
             Antoni
@@ -449,7 +448,7 @@ export default function Desk() {
             <div className="photo-inner">
               <Image
                 src="/oslo.jpg"
-                alt="oslo"
+                alt="Photo from Oslo"
                 fill
                 sizes="260px"
                 loading="eager"
@@ -474,7 +473,7 @@ export default function Desk() {
             <h4>currently</h4>
             <p>
               <b>Derpetual</b> &mdash; making every financial asset tradable.{" "}
-              <a href="https://www.derpetual.com/">&rarr;</a>
+              <a href="https://www.derpetual.com/" aria-label="visit Derpetual">&rarr;</a>
             </p>
           </article>
 
@@ -514,7 +513,7 @@ export default function Desk() {
             <p>
               distributed systems {"\u00b7"} markets {"\u00b7"} useful defi{" "}
               {"\u00b7"} truth {"\u00b7"} neuroscience {"\u00b7"} game theory{" "}
-              {"\u00b7"} philosophy {"\u00b7"} objective morality
+              {"\u00b7"} philosophy
             </p>
           </article>
 

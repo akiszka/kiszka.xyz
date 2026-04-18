@@ -33,10 +33,26 @@ const caveat = Caveat({
   display: "swap",
 });
 
+const description =
+  "Founder and programmer. Currently building Derpetual — making every asset tradable.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kiszka.xyz"),
   title: "Antoni Kiszka — kiszka.xyz",
-  description:
-    "Founder, programmer, Thiel Fellow. Born in the Polish countryside, now in Warsaw. Currently building Derpetual.",
+  description,
+  openGraph: {
+    title: "Antoni Kiszka",
+    description,
+    siteName: "kiszka.xyz",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Antoni Kiszka",
+    description,
+    creator: "@antoni_kiszka",
+  },
 };
 
 export const viewport: Viewport = {
