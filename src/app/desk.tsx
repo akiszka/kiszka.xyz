@@ -472,8 +472,9 @@ export default function Desk() {
           >
             <h4>currently</h4>
             <p>
-              <b>Derpetual</b> &mdash; making every financial asset tradable.{" "}
-              <a href="https://www.derpetual.com/" aria-label="visit Derpetual">&rarr;</a>
+              <a href="https://www.derpetual.com/" target="_blank" rel="noreferrer noopener">
+                <b>Derpetual</b>{" "}&mdash; making every financial asset tradable.&nbsp;&#x2197;
+              </a>
             </p>
           </article>
 
