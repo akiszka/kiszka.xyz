@@ -447,6 +447,8 @@ export default function Desk() {
                 src="/oslo.jpg"
                 alt="oslo"
                 fill
+                sizes="260px"
+                loading="eager"
                 className="object-cover select-auto pointer-events-none"
               />
             </div>
