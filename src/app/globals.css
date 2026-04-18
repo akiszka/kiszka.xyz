@@ -251,6 +251,10 @@ a {
   padding: 8px;
 }
 
+.photo-inner img {
+  object-fit: cover;
+}
+
 .photo-cap {
   position: absolute;
   bottom: 8px;

@@ -452,7 +452,7 @@ export default function Desk() {
                 fill
                 sizes="260px"
                 loading="eager"
-                className="object-cover select-auto pointer-events-none"
+                className="select-auto pointer-events-none"
               />
             </div>
             <div className="photo-cap">hello from oslo</div>
