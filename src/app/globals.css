@@ -81,6 +81,7 @@ a {
   }
 }
 
+
 .name {
   font-family: var(--font-instrument-serif), serif;
   font-weight: 400;
@@ -470,6 +471,10 @@ a {
 
 /* reduce motion */
 @media (prefers-reduced-motion: reduce) {
+  .hint {
+    color: var(--ink-soft);
+  }
+
   *,
   ::before,
   ::after {

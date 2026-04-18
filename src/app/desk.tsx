@@ -213,6 +213,99 @@ export default function Desk() {
     };
   }, []);
 
+  // Desk bump: after inactivity, nudge all cards via WAAPI to show they're movable
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    let cancelled = false;
+    const cancel = () => {
+      cancelled = true;
+    };
+    stage.addEventListener("pointerdown", cancel, { once: true });
+
+    const timer = setTimeout(() => {
+      if (cancelled) return;
+      if (window.matchMedia("(max-width: 960px)").matches) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      const objs = Array.from(stage.querySelectorAll<HTMLElement>(".obj"));
+      if (objs.some((el) => el.dataset.userMoved)) return;
+
+      objs.forEach((el) => {
+        const bump = 5 + Math.random() * 7;
+        el.animate(
+          [
+            { translate: "0 0" },
+            { translate: `0 ${bump}px` },
+            { translate: "0 0" },
+          ],
+          { duration: 700, easing: "cubic-bezier(0.22, 1.2, 0.36, 1)" }
+        );
+      });
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+      stage.removeEventListener("pointerdown", cancel);
+    };
+  }, []);
+
+  // Tape lift: periodic WAAPI animation to suggest the tape is peelable
+  useEffect(() => {
+    if (tapeState !== "attached") return;
+    const photo = photoRef.current;
+    if (!photo) return;
+    const tape = photo.querySelector<HTMLElement>(".tape");
+    if (!tape) return;
+    if (window.matchMedia("(max-width: 960px)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let anim: Animation | null = null;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
+
+    const lift = () => {
+      anim?.cancel();
+      anim = tape.animate(
+        [
+          { transform: "translateX(-50%) rotate(-3deg)" },
+          { transform: "translateX(-50%) rotate(-10deg) translateY(-3px)" },
+          { transform: "translateX(-50%) rotate(-3deg)" },
+        ],
+        { duration: 600, easing: "ease-in-out" }
+      );
+    };
+
+    const startTimer = setTimeout(() => {
+      lift();
+      intervalId = setInterval(lift, 6000);
+    }, 5000);
+
+    return () => {
+      clearTimeout(startTimer);
+      if (intervalId) clearInterval(intervalId);
+      anim?.cancel();
+    };
+  }, [tapeState]);
+
+  // Hint settle: brief emphasis via WAAPI so the hint catches the eye on load
+  useEffect(() => {
+    const hint = stageRef.current?.querySelector<HTMLElement>(".hint");
+    if (!hint) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const anim = hint.animate(
+      [
+        { color: "#111", offset: 0 },
+        { color: "#111", offset: 0.4 },
+        { color: "#6b6b6b", offset: 1 },
+      ],
+      { duration: 5000, fill: "both", easing: "ease-out" }
+    );
+
+    return () => anim.cancel();
+  }, []);
+
   // Warsaw clock
   useEffect(() => {
     const tick = () => {
