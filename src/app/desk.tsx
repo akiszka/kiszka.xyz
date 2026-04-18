@@ -491,9 +491,17 @@ export default function Desk() {
           >
             <h4>shipped</h4>
             <p>
-              enterprise sw {"\u00b7"} blockchain {"\u00b7"} robotics {"\u00b7"}{" "}
-              ml for finance {"\u00b7"} security &amp; pentesting {"\u00b7"}{" "}
-              on-chain hft {"\u00b7"} strategy consulting
+              <a href="https://parlour.dev" target="_blank" rel="noreferrer noopener">blockchain apps&nbsp;&#x2197;</a>
+              <br />
+              <a href="https://robohero.io/" target="_blank" rel="noreferrer noopener">games&nbsp;&#x2197;</a>
+              <br />
+              <a href="https://tofu.media/" target="_blank" rel="noreferrer noopener">media tech&nbsp;&#x2197;</a>
+              <br />
+              <a href="https://about.synergy.markets/" target="_blank" rel="noreferrer noopener">trading apps&nbsp;&#x2197;</a>
+              <br />
+              <a href="https://atlas.okinawa/" target="_blank" rel="noreferrer noopener">on-chain hft&nbsp;&#x2197;</a>
+              <br />
+              <a href="https://www.aldersonlabs.com/" target="_blank" rel="noreferrer noopener">business software&nbsp;&#x2197;</a>
             </p>
           </article>
 
@@ -511,9 +519,8 @@ export default function Desk() {
           >
             <h4>interested in</h4>
             <p>
-              distributed systems {"\u00b7"} markets {"\u00b7"} useful defi{" "}
-              {"\u00b7"} truth {"\u00b7"} neuroscience {"\u00b7"} game theory{" "}
-              {"\u00b7"} philosophy
+              useful defi {"\u00b7"} neuroscience {"\u00b7"} linguistics{" "}
+              {"\u00b7"} privacy
             </p>
           </article>
 

@@ -213,6 +213,15 @@ a {
 
 .card a {
   text-underline-offset: 3px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) {
+  .card a:hover {
+    transform: translateX(4px);
+  }
 }
 
 /* photo / polaroid */
