@@ -460,11 +460,11 @@ export default function Desk() {
 
           <article
             className="obj card"
-            data-px="720"
+            data-px="750"
             data-py="310"
             data-rot="-2"
             style={{
-              left: 720,
+              left: 750,
               top: cssTop(310),
               width: 240,
               transform: "rotate(-2deg)",
@@ -480,12 +480,12 @@ export default function Desk() {
 
           <article
             className="obj card"
-            data-px="560"
-            data-py="660"
+            data-px="550"
+            data-py="615"
             data-rot="2"
             style={{
-              left: 560,
-              top: cssTop(660),
+              left: 550,
+              top: cssTop(615),
               width: 290,
               transform: "rotate(2deg)",
             }}
@@ -508,12 +508,12 @@ export default function Desk() {
 
           <article
             className="obj card"
-            data-px="60"
-            data-py="680"
+            data-px="40"
+            data-py="580"
             data-rot="-3"
             style={{
-              left: 60,
-              top: cssTop(680),
+              left: 40,
+              top: cssTop(580),
               width: 310,
               transform: "rotate(-3deg)",
             }}
@@ -527,12 +527,12 @@ export default function Desk() {
 
           <article
             className="obj card dark"
-            data-px="370"
-            data-py="750"
+            data-px="300"
+            data-py="650"
             data-rot="3"
             style={{
-              left: 370,
-              top: cssTop(750),
+              left: 300,
+              top: cssTop(650),
               width: 240,
               transform: "rotate(3deg)",
             }}
@@ -552,12 +552,12 @@ export default function Desk() {
 
           <article
             className="obj card"
-            data-px="860"
-            data-py="600"
+            data-px="740"
+            data-py="450"
             data-rot="-1"
             style={{
-              left: 860,
-              top: cssTop(600),
+              left: 740,
+              top: cssTop(450),
               width: 320,
               transform: "rotate(-1deg)",
             }}
