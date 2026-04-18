@@ -1,14 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #efece4;
+  --paper: #c0c8d4; --card: #d8dee8;
   --ink: #111;
   --ink-soft: #333;
   --muted: #6b6b6b;
-  --card: #fffdf7;
   --tape: rgba(255, 220, 120, 0.75);
-  --photo-a: #d9d6cd;
-  --photo-b: #e5e2d9;
+  --photo-a: #d0c8b4; --photo-b: #dfd8c6;
 }
 
 * {
@@ -64,7 +62,7 @@ a {
   display: inline-block;
   width: 6px;
   height: 6px;
-  background: #c0392b;
+  background: #a83248;
   border-radius: 50%;
   margin-right: 8px;
   vertical-align: 1px;
@@ -74,9 +72,11 @@ a {
 @keyframes pulse {
   0%,
   100% {
-    opacity: 0.5;
+    background: #a83248;
+    opacity: 0.6;
   }
   50% {
+    background: #32a088;
     opacity: 1;
   }
 }
