@@ -59,8 +59,7 @@ export default function Desk() {
       objs.forEach((el) => {
         if (el.dataset.userMoved) return;
         const px = parseFloat(el.dataset.px!);
-        el.style.left =
-          clamp(px * scale, 6, sw - el.offsetWidth - 6) + "px";
+        el.style.left = clamp(px * scale, 6, sw - el.offsetWidth - 6) + "px";
       });
     }
 
@@ -93,7 +92,7 @@ export default function Desk() {
 
     function overlaps(
       a: ReturnType<typeof rectOf>,
-      b: ReturnType<typeof rectOf>
+      b: ReturnType<typeof rectOf>,
     ) {
       const pad = 4;
       return !(
@@ -241,7 +240,7 @@ export default function Desk() {
             { translate: `0 ${bump}px` },
             { translate: "0 0" },
           ],
-          { duration: 700, easing: "cubic-bezier(0.22, 1.2, 0.36, 1)" }
+          { duration: 700, easing: "cubic-bezier(0.22, 1.2, 0.36, 1)" },
         );
       });
     }, 3000);
@@ -273,7 +272,7 @@ export default function Desk() {
           { transform: "translateX(-50%) rotate(-10deg) translateY(-3px)" },
           { transform: "translateX(-50%) rotate(-3deg)" },
         ],
-        { duration: 600, easing: "ease-in-out" }
+        { duration: 600, easing: "ease-in-out" },
       );
     };
 
@@ -301,7 +300,7 @@ export default function Desk() {
         { color: "#111", offset: 0.4 },
         { color: "#6b6b6b", offset: 1 },
       ],
-      { duration: 5000, fill: "both", easing: "ease-out" }
+      { duration: 5000, fill: "both", easing: "ease-out" },
     );
 
     return () => anim.cancel();
@@ -322,7 +321,7 @@ export default function Desk() {
       const get = (t: Intl.DateTimeFormatPartTypes) =>
         parts.find((p) => p.type === t)!.value;
       setClockText(
-        `warsaw \u00b7 ${get("hour")}:${get("minute")} \u00b7 ${get("day")}.${get("month")}.${get("year")}`
+        `warsaw \u00b7 ${get("hour")}:${get("minute")} \u00b7 ${get("day")}.${get("month")}.${get("year")}`,
       );
     };
     tick();
@@ -351,7 +350,7 @@ export default function Desk() {
             { transform: `rotate(${baseRot + 1.5}deg) translateY(6px)` },
             { transform: `rotate(${baseRot}deg) translateY(0)` },
           ],
-          { duration: 500, easing: "cubic-bezier(.4,1.4,.4,1)" }
+          { duration: 500, easing: "cubic-bezier(.4,1.4,.4,1)" },
         );
       }
     }
@@ -366,7 +365,7 @@ export default function Desk() {
         return prev;
       });
     },
-    []
+    [],
   );
 
   const handleReset = useCallback(() => {
@@ -472,8 +471,13 @@ export default function Desk() {
           >
             <h2>currently</h2>
             <p>
-              <a href="https://www.derpetual.com/" target="_blank" rel="noreferrer noopener">
-                <b>Derpetual</b>{" "}&mdash; making every financial asset tradable.&nbsp;&#x2197;
+              <a
+                href="https://www.derpetual.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <b>Derpetual</b> &mdash; making every financial asset
+                tradable.&nbsp;&#x2197;
               </a>
             </p>
           </article>
@@ -492,17 +496,53 @@ export default function Desk() {
           >
             <h2>shipped</h2>
             <p>
-              <a href="https://parlour.dev" target="_blank" rel="noreferrer noopener">blockchain apps&nbsp;&#x2197;</a>
+              <a
+                href="https://parlour.dev"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                blockchain apps&nbsp;&#x2197;
+              </a>
               <br />
-              <a href="https://robohero.io/" target="_blank" rel="noreferrer noopener">games&nbsp;&#x2197;</a>
+              <a
+                href="https://robohero.io/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                games&nbsp;&#x2197;
+              </a>
               <br />
-              <a href="https://tofu.media/" target="_blank" rel="noreferrer noopener">media tech&nbsp;&#x2197;</a>
+              <a
+                href="https://tofu.media/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                media tech&nbsp;&#x2197;
+              </a>
               <br />
-              <a href="https://about.synergy.markets/" target="_blank" rel="noreferrer noopener">trading apps&nbsp;&#x2197;</a>
+              <a
+                href="https://about.synergy.markets/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                trading apps&nbsp;&#x2197;
+              </a>
               <br />
-              <a href="https://atlas.okinawa/" target="_blank" rel="noreferrer noopener">on-chain hft&nbsp;&#x2197;</a>
+              <a
+                href="https://atlas.okinawa/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                on-chain hft&nbsp;&#x2197;
+              </a>
               <br />
-              <a href="https://www.aldersonlabs.com/" target="_blank" rel="noreferrer noopener">business software&nbsp;&#x2197;</a>
+              <a
+                href="https://www.aldersonlabs.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                business software&nbsp;&#x2197;
+              </a>
             </p>
           </article>
 
@@ -576,11 +616,7 @@ export default function Desk() {
 
       <div className="foot">
         <span>{clockText}</span>
-        <button
-          className="reset"
-          onClick={handleReset}
-          title="reset the desk"
-        >
+        <button className="reset" onClick={handleReset} title="reset the desk">
           tidy desk {"\u21BA"}
         </button>
       </div>
