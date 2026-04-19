@@ -398,11 +398,11 @@ export default function Desk() {
             </span>
           </h1>
           <p className="sub">
-            Born in the Polish countryside, now in Warsaw. Started coding at 10
-            and founded my first company at 17 &mdash; a software house, built
-            with a high-school friend who&apos;s still my co-founder. Currently
-            building <b>Derpetual</b>, trying to make every financial asset
-            tradable. I find beauty in simplicity.
+            Born in the Polish countryside, now based in Warsaw. Started coding
+            at 10 and founded my first company at 17 &mdash; a software house,
+            built with a high-school friend who&apos;s still my co-founder.
+            Currently building <b>Derpetual</b>, trying to make every financial
+            asset tradable. I find beauty in simplicity.
           </p>
 
           <nav className="links" aria-label="elsewhere">
