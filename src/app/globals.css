@@ -99,12 +99,21 @@ a {
 
 .name .dot {
   display: inline-block;
-  color: var(--muted);
-  transition: transform 0.2s cubic-bezier(0.4, 1.6, 0.4, 1);
+  position: relative;
+  color: transparent;
   cursor: pointer;
 }
 
-.name .dot:hover {
+.name .dot::before {
+  content: ".";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: var(--muted);
+  transition: transform 0.2s cubic-bezier(0.4, 1.6, 0.4, 1);
+}
+
+.name .dot:hover::before {
   transform: translateY(-0.1em) rotate(12deg);
 }
 
